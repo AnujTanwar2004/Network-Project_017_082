@@ -1,0 +1,247 @@
+:root {
+    --primary: #1e88e5;
+    --primary-dark: #1565c0;
+    --secondary: #64b5f6;
+    --background: #0d47a1;
+    --text: #ffffff;
+    --card-bg: #1976d2;
+    --error: #ff5252;
+    --success: #4caf50;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--secondary);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+  }
+  
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  button {
+    background-color: var(--primary);
+    color: var(--text);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .divider {
+    text-align: center;
+    margin: 1rem 0;
+    position: relative;
+  }
+  
+  .divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 50%;
+    width: 40%;
+  }
+  
+  .divider::before {
+    left: 0;
+  }
+  
+  .divider::after {
+    right: 0;
+  }
+  
+  .game-code-container {
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  
+  .game-code {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+  
+  .player-list {
+    list-style: none;
+    margin: 1rem 0;
+  }
+  
+  .player-list li {
+    padding: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .countdown {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--text);
+  }
+  
+  .error-message {
+    color: var(--error);
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Game Page Styles */
+  .game-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .memory-card {
+    aspect-ratio: 1/1;
+    background-color: var(--primary);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .memory-card .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+  
+  .memory-card .card-front {
+    background-color: var(--primary-dark);
+    transform: rotateY(180deg);
+  }
+  
+  .memory-card .card-back {
+    background-color: var(--primary);
+  }
+  
+  .memory-card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .memory-card.matched {
+    background-color: var(--success);
+    cursor: default;
+  }
+  
+  .current-turn {
+    font-weight: bold;
+    color: #ffeb3b;
+  }
+  
+  .game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .game-board {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
