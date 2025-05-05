@@ -1,0 +1,36 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "Multiplayer Memory Card Game",
+  "keywords": [
+    "anuj2414"
+  ],
+  "homepage": "https://github.com/AnujTanwar2004/CN-PROJECT#readme",
+  "bugs": {
+    "url": "https://github.com/AnujTanwar2004/CN-PROJECT/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnujTanwar2004/CN-PROJECT.git"
+  },
+  "license": "ISC",
+  "author": "anuj and sachin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm start",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"npm run client\" \"npm run start\"",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "react-confetti": "^6.4.0",
+    "react-scripts": "^5.0.1",
+    "use-sound": "^5.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
